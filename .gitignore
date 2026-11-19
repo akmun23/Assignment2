@@ -1,0 +1,45 @@
+# Python environments and caches
+.Ass2Venv/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.cache/
+
+# Training output (checkpoints/ holds the bundled teacher and selector and stays tracked)
+/train_model/runs/
+
+# Vivado: the DFX project is built by hand in the GUI from dfx/hdl, dfx/floorplan.xdc and the HLS IPs, nothing generated is tracked
+/Vivado/
+.Xil/
+/dfx/*
+!/dfx/hdl/
+!/dfx/floorplan.xdc
+hd_visual/
+
+# Vitis: only the HLS sources of the six networks and the PS application are tracked
+/Vitis/*
+!/Vitis/CNN_standalone/
+!/Vitis/SNN_standalone/
+!/Vitis/NN_selector/
+!/Vitis/NN_circle/
+!/Vitis/NN_square/
+!/Vitis/NN_triangle/
+!/Vitis/PS_application/
+/Vitis/*/*
+!/Vitis/*/nn.cpp
+!/Vitis/*/nn_tb.cpp
+!/Vitis/*/nn_weights.h
+!/Vitis/*/nn_calibration.h
+!/Vitis/PS_application/helloworld.c
+
+# Results, reports and scratch folders
+/results/
+Vitis_candidates/
+tests/
+logs/
+*.log
+*.jou
+*.str
+hs_err_pid*
+webtalk*
