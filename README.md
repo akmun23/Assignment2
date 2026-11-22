@@ -48,7 +48,7 @@ Cascade mean in dataset order: 279.3 µs, including the head reloads; the head i
 The CNN and the SNN answer exactly like their integer reference on all images.
 
 ### UART and what comes next
-The UART transfer is reported separately from the inference time: one request takes 22.7 ms in all, of which 5.2 ms is PS/PC software time not shown in the [time per request](graphs/8_time_per_request_uart_overhead.pdf) figure. The image frame alone needs 12.3 ms at 4 Mbaud (4,904 bytes, 10 bits each), so the transfer takes more than the inference. Sending the image over Ethernet, by DMA from DDR, or packed to fewer bits would remove most of it. The PS also runs the three paths one after the other, which a single request does not need.
+The UART transfer is reported separately from the inference time: one request takes 22.7 ms in all, of which 5.2 ms is PS/PC software time not shown in the [time per request](graphs/8_time_per_request_uart_overhead.pdf) figure. The image frame alone needs 12.3 ms at 4 Mbaud (4,904 bytes, 10 bits each), so the transfer takes more than the inference.
 
 Figures in `graphs/`: [training curves](graphs/1_training_curves.pdf), [errors of all models](graphs/2d_errors_all_models.pdf), [confusion matrices](graphs/3_confusion_matrices.pdf), [resource usage](graphs/4_resource_usage_cnn_snn_cascade.pdf), [UART frame layout](graphs/5_uart_frame_layout.pdf), [cascade outcomes](graphs/6_cascade_outcomes.pdf), [accuracy on hardware](graphs/7_accuracy_on_hardware.pdf), [time per request](graphs/8_time_per_request_uart_overhead.pdf), [power estimate](graphs/11_power_estimate_per_configuration.pdf), [training examples](graphs/12_training_examples.pdf).
 
